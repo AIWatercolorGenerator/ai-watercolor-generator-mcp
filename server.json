@@ -30,7 +30,16 @@
       "version": "0.1.0",
       "transport": {
         "type": "stdio"
-      }
+      },
+      "environmentVariables": [
+        {
+          "name": "AIWATERCOLOR_API_KEY",
+          "description": "API key from AI Watercolor Generator",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
     }
   ]
 }

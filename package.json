@@ -1,6 +1,7 @@
 {
   "name": "@ai-watercolor-generator/mcp",
   "version": "0.1.0",
+  "mcpName": "com.aiwatercolorgenerator/watercolor",
   "description": "Create watercolor art from text or transform local images through an MCP server.",
   "keywords": [
     "mcp",

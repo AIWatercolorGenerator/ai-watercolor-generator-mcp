@@ -2,6 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 
 import type { ApiClient } from "./api-client.js";
 import { toToolError, toToolResult } from "./errors.js";
+import { packageVersion } from "./package-version.js";
 import {
   editInputSchema,
   generationInputSchema,
@@ -13,7 +14,7 @@ export function createWatercolorMcpServer(apiClient: ApiClient) {
   const server = new McpServer(
     {
       name: "ai-watercolor-generator-mcp",
-      version: "0.1.0",
+      version: packageVersion,
     },
     {
       instructions:
