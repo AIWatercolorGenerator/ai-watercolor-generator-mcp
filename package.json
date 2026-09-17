@@ -1,0 +1,59 @@
+{
+  "name": "@ai-watercolor-generator/mcp",
+  "version": "0.1.0",
+  "description": "Create watercolor art from text or transform local images through an MCP server.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "watercolor",
+    "ai-image-generation",
+    "image-editing",
+    "stdio"
+  ],
+  "homepage": "https://www.aiwatercolorgenerator.com/docs/mcp",
+  "bugs": {
+    "url": "https://github.com/AIWatercolorGenerator/ai-watercolor-generator-mcp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AIWatercolorGenerator/ai-watercolor-generator-mcp.git"
+  },
+  "license": "MIT",
+  "author": "AI Watercolor Generator",
+  "type": "module",
+  "bin": {
+    "ai-watercolor-generator-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "postbuild": "node -e \"require('node:fs').chmodSync('dist/index.js', 0o755)\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:unit": "vitest run --exclude tests/stdio.test.ts",
+    "test": "pnpm build && vitest run",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "pack:check": "pnpm pack --dry-run"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "prettier": "3.8.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.0.17"
+  }
+}
